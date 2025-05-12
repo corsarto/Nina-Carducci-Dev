@@ -84,15 +84,13 @@ body {
 	font-weight: 800;
 	font-style: italic;
 	width: 60%;
+	font-size: 1rem;
 }
-#about-me p {
+.about-me__txt {
 	width: 80%;
 	font-size: 14px;
 }
 
-#gallery {
-	/*	min-height: 100vh; */
-}
 .title{
 	text-align: center;
 	padding-block: 2em;
@@ -120,11 +118,34 @@ body {
 
 }
 .gallery-item {
-	position: absolute;
-	width: 100%;
-	height: 100%;
+	width: 380px;
+	height: 380px;
 	object-fit: cover;
 	padding: .5em;
+}
+.gallery {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+	max-width: 1200px;
+	margin: auto;
+	}
+
+.gallery-filter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 1.5rem 0;
+}
+	.filter-button {
+	border: none;
+	background: none;
+	padding: 0.5rem 1rem;
+}
+.active{
+	background: rgba(161, 138, 3, 0.808);
+	border-radius: 4px;
+	color: white;
 }
 .mg-prev, .mg-next {
 	width: 30px;
@@ -144,13 +165,12 @@ body {
 	padding-block: 3em;
 }
 .quote__text {
-	font-family: Spectral;
 	font-style: italic;
 	font-weight: 300;
-
+	font-family: inherit;
+    font-size: 2.5rem;
 }
 .quote__author {
-	font-family: Spectral;
 	font-weight: 800;
 	font-size: 22px;
 }
@@ -332,6 +352,10 @@ input[type="submit"] {
 		flex: 1;
 		padding-block: 1em;
 		text-align: center;
+	}
+	.gallery-filter{
+		flex-wrap: wrap;
+		max-width: 600px;
 	}
 	.picture.left::before, .picture.right::before {
 		height: 150px;
