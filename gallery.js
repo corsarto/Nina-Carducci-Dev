@@ -56,8 +56,51 @@ const filterButtonCard = (e) => {
 })};
 filterButtons.forEach(button => button.addEventListener('click', (filterButtonCard)));
 
+const modal = document.querySelector('.modal');
+const modalContent = document.querySelector('.img-modal-content img');
+const imgModal = document.querySelector('.img-modal');
 
-   
+galleryContent.forEach((item) => {
+    item.addEventListener('click', () => {
+        const imgSrc = item.getAttribute('src'); 
+        imgModal.setAttribute('src', imgSrc); 
+        modal.style.display = 'flex'; 
+        
+    });
+}
+);
+
+modal.addEventListener('click', (e) => {
+    if (!e.target.closest('.img-modal-content')) {
+        modal.style.display = 'none';
+    }
+});
+
+const rigthBtn = document.querySelector('#button-right');
+const leftBtn = document.querySelector('#button-left');
+
+rigthBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    
+    const currentSrc = modalContent.getAttribute('src');
+    const currentIndex = Array.from(galleryContent).findIndex(item => item.getAttribute('src') === currentSrc);
+    const nextIndex = (currentIndex + 1) % galleryContent.length;
+    const nextImg = galleryContent[nextIndex].getAttribute('src');
+    modalContent.setAttribute('src', nextImg);
+
+});
+
+leftBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    
+    const currentSrc = modalContent.getAttribute('src');
+    const currentIndex = Array.from(galleryContent).findIndex(item => item.getAttribute('src') === currentSrc);
+    const nextIndex = (currentIndex - 1 + galleryContent.length) % galleryContent.length;
+    const nextImg = galleryContent[nextIndex].getAttribute('src');
+    modalContent.setAttribute('src', nextImg);
+    
+});
+
 
 
 
