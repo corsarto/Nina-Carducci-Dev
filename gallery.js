@@ -7,9 +7,8 @@ galleryFilter.setAttribute('class', 'gallery-filter');
 
 const filterAll = document.createElement('button');
 filterAll.textContent = 'Tous';
-filterAll.setAttribute('class', 'filter-button active ');
+filterAll.setAttribute('class', 'filter-button active');
 filterAll.setAttribute('data-gallery-tag', 'all');
-
 
 const filterConcert = document.createElement('button');
 filterConcert.textContent = 'Concert';
@@ -39,14 +38,13 @@ galleryFilter.appendChild(filterWedding);
 galleryFilter.appendChild(filterPortrait);
 galleryWrapper.appendChild(gallery);
 
-
 const filterButtons = document.querySelectorAll('.filter-button');
 const galleryContent = document.querySelectorAll('.gallery-item');
 
 const filterButtonCard = (e) => {
     document.querySelector('.filter-button.active').classList.remove('active');
     e.target.classList.add('active');
-
+    
     galleryContent.forEach((item) => {
         if (item.dataset.galleryTag === e.target.dataset.galleryTag || e.target.dataset.galleryTag === 'all') {
             item.style.display = 'flex';

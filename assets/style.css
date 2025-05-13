@@ -143,8 +143,7 @@ body {
 	padding: 0.5rem 1rem;
 }
 .active{
-	background: rgba(161, 138, 3, 0.808);
-	border-radius: 4px;
+	background: #BEB45A;;
 	color: white;
 }
 .mg-prev, .mg-next {
@@ -167,12 +166,14 @@ body {
 .quote__text {
 	font-style: italic;
 	font-weight: 300;
-	font-family: inherit;
+	font-family: 'Spectral';
     font-size: 2.5rem;
+	line-height: 1.2;
 }
 .quote__author {
 	font-weight: 800;
 	font-size: 22px;
+	font-family: 'Spectral';
 }
 
 #services {
