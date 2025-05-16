@@ -7,7 +7,7 @@ galleryFilter.setAttribute('class', 'gallery-filter');
 
 const filterAll = document.createElement('button');
 filterAll.textContent = 'Tous';
-filterAll.setAttribute('class', 'filter-button active');
+filterAll.setAttribute('class', 'filter-button active-type');
 filterAll.setAttribute('data-gallery-tag', 'all');
 
 const filterConcert = document.createElement('button');
@@ -41,33 +41,39 @@ galleryWrapper.appendChild(gallery);
 const filterButtons = document.querySelectorAll('.filter-button');
 const galleryContent = document.querySelectorAll('.gallery-item');
 
+
+
 const filterButtonCard = (e) => {
-    document.querySelector('.filter-button.active').classList.remove('active');
-    e.target.classList.add('active');
+    document.querySelector('.filter-button.active-type').classList.remove('active-type');
+    e.target.classList.add('active-type');
     
     galleryContent.forEach((item) => {
         if (item.dataset.galleryTag === e.target.dataset.galleryTag || e.target.dataset.galleryTag === 'all') {
             item.style.display = 'flex';
-        }
+            
+            }
         else {
             item.style.display = 'none';
-
-        }
+            
+}
 })};
-filterButtons.forEach(button => button.addEventListener('click', (filterButtonCard)));
+filterButtons.forEach(button => button.addEventListener('click', filterButtonCard));
 
 const modal = document.querySelector('.modal');
 const modalContent = document.querySelector('.img-modal-content img');
 const imgModal = document.querySelector('.img-modal');
 
+let ImageSrc = document.querySelectorAll('.gallery-item img');
+ImageSrc = Array.from(galleryContent).map((img) => img.getAttribute('src'));
+
+
 galleryContent.forEach((item) => {
     item.addEventListener('click', () => {
-        const imgSrc = item.getAttribute('src'); 
-        imgModal.setAttribute('src', imgSrc); 
-        modal.style.display = 'flex'; 
+    const imgSrc = item.getAttribute('src'); 
+    imgModal.setAttribute('src',imgSrc);  
+    modal.style.display = 'flex'; })}
         
-    });
-}
+        
 );
 
 modal.addEventListener('click', (e) => {

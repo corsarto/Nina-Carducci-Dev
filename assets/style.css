@@ -50,7 +50,28 @@ body {
 	position: relative;
 	align-items: center;
 }
-
+.carousel-indicators button {
+  box-sizing: content-box;
+  flex: 0 1 auto;
+  width: 30px;
+  height: 3px;
+  padding: 0;
+  margin-right: 3px;
+  margin-left: 3px;
+  text-indent: -999px;
+  cursor: pointer;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  opacity: 0.5;
+  transition: opacity 0.6s ease;
+}
+.carousel-indicators .active {
+  opacity: 1;
+  
+}
 .picture.left::before {
 	content: ' ';
 	background-color: #E5975F;
@@ -124,7 +145,7 @@ body {
 	padding: 0.5rem 1rem;
 	cursor: pointer;
 }
-.active{
+.active-type{
 	background: #BEB45A;;
 	color: white;
 }
